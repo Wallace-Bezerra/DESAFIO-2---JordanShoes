@@ -17,6 +17,9 @@
     display: flex;
     justify-content: center;
     padding-block: 6px;
+}
+
+.titulo h1 {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
@@ -27,9 +30,8 @@
 .background {
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
     position: relative;
-
 }
 
 .background img {
@@ -39,15 +41,12 @@
     filter: brightness(50%);
 }
 
-
-
 .descricao {
     position: absolute;
     left: 100px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-
 }
 
 .descricao h2 {
@@ -73,7 +72,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
 }
 
 .destaques h2 {
@@ -92,13 +91,14 @@
     font-size: 18px;
     line-height: 196.19%;
     margin-bottom: 58px;
+    text-align: center;
 }
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px 13px;
-    margin-inline: 100px;
+    margin-inline: 50px;
     margin-bottom: 100px;
 }
 
@@ -106,6 +106,19 @@
     background-color: #EBE9EA;
     width: 100%;
     padding: 76px 25px;
+
+}
+
+.cards li:hover {
+    filter: brightness(95%);
+}
+
+.cards li img {
+    transition: 0.8s ease-in-out;
+}
+
+.cards li:hover img {
+    transform: scale(1.1);
 }
 
 footer {
@@ -113,10 +126,43 @@ footer {
     display: flex;
     justify-content: center;
     padding-block: 20px;
+}
+
+footer h2 {
     color: var(--white);
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
+    font-weight: 500;
+    font-size: 18px;
     line-height: 196.19%;
+}
+
+@media(max-width:725px) {
+    .cards {
+        margin-inline: 20px;
+        margin-bottom: 50px;
+    }
+
+    .descricao {
+        left: auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .descricao h2 {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 34px;
+    }
+
+    .descricao p {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 180%;
+        margin-bottom: 58px;
+    }
 }
